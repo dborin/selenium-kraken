@@ -1,0 +1,61 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (1.4.8)
+    build-essential (1.1.2)
+    dmg (1.0.0)
+    git (1.0.2)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    java (1.6.0)
+    ntp (1.2.0)
+    openssh (1.1.0)
+    openssl (1.0.0)
+    rsyslog (1.1.0)
+    runit (0.15.0)
+    tmux (1.1.0)
+    vim (1.0.2)
+    yum (1.0.0)
+    zlib (1.0.0)
+
+GIT
+  remote: git@github.com:racker/cookbook-mailgun.git
+  ref: master
+  sha: 6a659d11667ef68efd9b9d4c3a57f4bc3ebb9113
+  specs:
+    mailgun (0.1.0)
+
+GIT
+  remote: https://github.com/racker/cookbook-cassandra.git
+  ref: master
+  sha: 263e973afd0935e3fd7e71968a74d8548f52811a
+  specs:
+    cassandra (0.0.1)
+      java (>= 0.0.0)
+      mailgun (>= 0.0.0)
+      required_attributes (>= 0.0.0)
+
+GIT
+  remote: https://github.com/racker/cookbook-required_attributes.git
+  ref: master
+  sha: 786e1c4cafab5b2b1eec0e8c67f3e4567f84dffd
+  specs:
+    required_attributes (0.0.1)
+
+DEPENDENCIES
+  apt (>= 0)
+  cassandra (>= 0)
+  git (>= 0)
+  mailgun (>= 0)
+  ntp (>= 0)
+  openssh (>= 0)
+  openssl (>= 0)
+  required_attributes (>= 0)
+  rsyslog (>= 0)
+  runit (>= 0)
+  tmux (>= 0)
+  vim (>= 0)
+  zlib (>= 0)
+

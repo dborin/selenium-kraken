@@ -1,0 +1,19 @@
+{
+    "ipaddress": "10.14.208.149",
+    "run_list": [
+        "recipe[ohai]"
+    ],
+    "network": {
+        "ipaddress_lo": "127.0.0.1",
+        "ipaddress6_lo": "::1",
+        "macaddress_eth0": "BE:EF:FA:00:01:C4",
+        "macaddress_eth1": "BE:EF:FA:00:02:00",
+        "default_gateway": "10.14.208.1",
+        "ipaddress6_eth0": "fe80::bcef:faff:fe00:1c4",
+        "ipaddress6_eth1": "fe80::bcef:faff:fe00:200",
+        "ipaddress_eth1": "10.179.192.135",
+        "ipaddress_eth0": "10.14.208.149",
+        "ipaddress_nat": "74.205.117.244",
+        "default_interface": "eth0"
+    }
+}

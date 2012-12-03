@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'ntp'
+cookbook 'apt'
+cookbook 'tmux'
+cookbook 'vim'
+cookbook 'openssl'
+cookbook 'openssh'
+cookbook 'rsyslog'
+cookbook 'runit'
+cookbook 'zlib'
+cookbook 'git'
+
+cookbook 'mailgun',
+  :git => 'git@github.com:racker/cookbook-mailgun.git'
+
+cookbook 'required_attributes',
+  :git => 'https://github.com/racker/cookbook-required_attributes.git'
+
+cookbook 'cassandra',
+  :git => 'https://github.com/racker/cookbook-cassandra.git'

@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import os
+import ConfigParser
+
+# from littlechef import lib
+from littlechef import runner as lc
+from ssh.config import SSHConfig
+
+# github.com/racker/vmrunwrapper
+import vmrunwrapper
+
+old_currwd = os.getcwd()
+os.chdir(os.path.dirname(os.path.dirname(__file__)))
+
+wrapper = vmrunwrapper.VmrunWrapper(
+    **vmrunwrapper.get_config('scripts/vmrunwrapper.conf'))
+wrapper.start()
+
+parser = ConfigParser.SafeConfigParser()
+parser.read('config.cfg')
+
+try:
+    lc.env.node_work_path = parser.get('kitchen', 'node_work_path')
+except:
+    lc.env.node_work_path = "/tmp/chef-solo/"
+
+lc.env.loglevel = 'debug'
+lc.env.verbose = True
+lc.env.host_string = lc.env.host = wrapper.host
+
+# set littlechef's ssh config
+lc.env.ssh_config = SSHConfig()
+with open(wrapper.ssh_config_path) as ssh_config:
+    lc.env.ssh_config.parse(ssh_config)
+
+# update and save
+lc.role('base')  # Applies base role to vmware
+# with lib.credentials():
+#     lc.plugin("save_network")
+
+os.chdir(old_currwd)
