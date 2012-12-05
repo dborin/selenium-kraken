@@ -1,0 +1,14 @@
+{
+    "name": "se-hub",
+    "json_class": "Chef::Role",
+    "run_list": [
+        "recipe[selenium::local]",
+        "recipe[selenium::grid_hub]"
+    ],
+    "description": "Installs required recipes for a Selenium Server hub",
+    "chef_type": "role",
+    "default_attributes": {
+    },
+    "override_attributes": {
+    }
+}
