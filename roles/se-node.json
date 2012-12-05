@@ -1,0 +1,16 @@
+{
+    "name": "se-node",
+    "json_class": "Chef::Role",
+    "run_list": [
+        "recipe[selenium::local]",
+        "recipe[selenium::firefox]",
+        "recipe[selenium::chrome]",
+        "recipe[selenium::grid_node]"
+    ],
+    "description": "Installs required recipes for a Selenium Server node",
+    "chef_type": "role",
+    "default_attributes": {
+    },
+    "override_attributes": {
+    }
+}
