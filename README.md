@@ -1,12 +1,14 @@
-# Autoscaling Chef
+# Selenium Server Chef
 
-Chef repo for the [Stretch Autoscaling][1] project
+Chef repo for installing a Selenium Server hub or node
 
 More info to come soon.
 
-# Tools
-[chef](http://wiki.opscode.com/display/chef/Home)
-[littlechef](https://github.com/tobami/littlechef)
-[librarian](https://github.com/applicationsonline/librarian)
+## Notes
 
-[1]: https://one.rackspace.com/display/Stretch/Home
+
+
+## Tools
+[chef](http://wiki.opscode.com/display/chef/Home)<br>
+[littlechef](https://github.com/tobami/littlechef)<br>
+[librarian](https://github.com/applicationsonline/librarian)

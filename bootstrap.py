@@ -1,23 +1,33 @@
 from optparse import OptionParser
 from littlechef import runner as lc
+from ssh.config import SSHConfig as _SSHConfig
+import os
 
 parser = OptionParser()
 parser.add_option("-p", "--password", dest="password",
     help="root password for new server")
 parser.add_option("-H", "--hostname", dest="hostname",
-    help="hostname or ip of new server")
+    help="server hostname")
+parser.add_option("-r", "--role", dest="role",
+    type="choice", choices=["hub", "node"],
+    default="node",
+    help="Type of server (hub or node) [default: %default]")
 
 (options, args) = parser.parse_args()
+
+# begin hackery to load config file until littlechef gets fixed (04DEC2012)
+
+ssh_config = "~/.ssh/chef.config"
+lc.env.use_ssh_config = True
+lc.env.ssh_config = _SSHConfig()
+lc.env.ssh_config_path = os.path.expanduser(ssh_config)
+
+# end hackery
 
 lc.env.user = 'root'
 lc.env.password = options.password
 lc.env.host_string = options.hostname
 lc.env.host = options.hostname
-lc.env.node_work_path = "/tmp/chef-solo/"
 lc.deploy_chef()
-
-# We need the ohai plugins installed before running Chef
-lc.recipe("ohai")
-#lc.plugin("save_network")
-#lc.plugin("save_cloud")
-#lc.role("prod")
+lc.node(options.hostname)
+lc.role("se-%s" % options.role)
