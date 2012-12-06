@@ -10,6 +10,11 @@
     "description": "Installs required recipes for a Selenium Server node",
     "chef_type": "role",
     "default_attributes": {
+        "selenium": {
+            "server": {
+                "hubaddress": "sfo-selenium-hub0"
+            }
+        }
     },
     "override_attributes": {
     }

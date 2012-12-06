@@ -11,10 +11,6 @@ def main():
         help="root password for new server")
     parser.add_option("-H", "--hostname", dest="hostname",
         help="server hostname")
-    parser.add_option("-r", "--role", dest="role",
-        type="choice", choices=["hub", "node"],
-        default="node",
-        help="Type of server (hub or node) [default: %default]")
 
     (options, args) = parser.parse_args()
 
@@ -33,7 +29,6 @@ def main():
     lc.env.host = options.hostname
     lc.deploy_chef()
     lc.node(options.hostname)
-    lc.role("se-%s" % options.role)
 
 if __name__=="__main__":
     main()
