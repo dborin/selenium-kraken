@@ -7,6 +7,7 @@ HUBARGS="-jar $SELPATH -role hub -hubConfig $CONFIGPATH "
 PIDFILE=/var/run/selenium/hub.pid
 case "$1" in
   start)
+    mkdir -p /var/run/selenium
     echo -n "Starting grid hub"
     /sbin/start-stop-daemon --start --pidfile $PIDFILE --make-pidfile --background --exec $HUBJAVA -- $HUBARGS
     echo "."

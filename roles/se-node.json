@@ -12,7 +12,10 @@
     "default_attributes": {
         "selenium": {
             "server": {
-                "hubaddress": "sfo-selenium-hub0"
+                "hubaddress": "10.14.208.149"
+            },
+            "node": {
+                "hubhost": "10.14.208.149"
             }
         }
     },

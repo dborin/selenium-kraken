@@ -11,6 +11,7 @@ NODEARGS="-jar $SELPATH -role webdriver -hub http://$HUBHOST/grid/register -node
 PIDFILE=/var/run/selenium/node_${DISPLAY:1}.pid
 case "$1" in
   start)
+    mkdir -p /var/run/selenium
     echo -n "Starting grid node"
     /sbin/start-stop-daemon --start --quiet --pidfile $PIDFILE --make-pidfile --background --exec $NODEJAVA -- $NODEARGS
     echo "."

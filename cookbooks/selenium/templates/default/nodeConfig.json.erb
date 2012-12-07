@@ -17,7 +17,7 @@
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
     "maxSession": 5,
     "port": 5555,
-    "host": "<%= node['selenium']['server']['hubaddress'] %>",
+    "host": "<%= node['ipaddress'] %>",
     "register": true,
     "registerCycle": 5000,
     "hubPort": <%= node['selenium']['server']['hubport'] %>
