@@ -21,7 +21,7 @@ The following must be configured prior to installation
 				
 3. Modify the `/nodes/*.json` files accordingly to match the names and IPs of **YOUR** iNova machines.
 4. An iNova server (Ubuntu 12.04) for a hub and at least one for a node (multiple nodes can be created)
-5. Append the `secretkey_rsa.pub` to the `/root/.ssh/authorized_keys2` fileuse<br><br>
+5. Append the `secretkey_rsa.pub` to the `/root/.ssh/authorized_keys2` file on all hub and node servers<br><br>
 
 		cat ~/.ssh/secretkey_rsa.pub | { read x; ssh root@my-hub0 "echo $x >> .ssh/authorized_keys2"; }
 
