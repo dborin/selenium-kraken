@@ -27,7 +27,7 @@ def main():
     lc.env.password = options.password
     lc.env.host_string = options.hostname
     lc.env.host = options.hostname
-    lc.deploy_chef()
+    lc.deploy_chef(ask="no")
     lc.node(options.hostname)
 
 if __name__=="__main__":
