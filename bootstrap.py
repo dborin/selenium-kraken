@@ -27,6 +27,8 @@ def main():
     lc.env.password = options.password
     lc.env.host_string = options.hostname
     lc.env.host = options.hostname
+    lc.env.encrypted_data_bag_secret = None
+    lc.env.follow_symlinks = False
     lc.deploy_chef(ask="no")
     lc.node(options.hostname)
 

@@ -4,7 +4,7 @@ default.selenium.home = '/home/seleniumuser/'
 default.selenium.bindings = { 'python' => '2.24.0', 'ruby' => '2.27.2'}
 
 #hub config
-default.selenium.server.version = '2.28.0'
+default.selenium.server.version = '2.29.0'
 default.selenium.server.installpath = default['selenium']['home']+'selenium'
 default.selenium.server.standalonefile = default['selenium']['home']+'selenium'
 
@@ -23,4 +23,4 @@ default.selenium.node.maxSession = '5'
 default.selenium.xvfb.display = ':98'
 default.selenium.xvfb.fbsize = '1280x1024x16'
 
-default.selenium.chromedriver_version = '23.0.1240.0'
+default.selenium.chromedriver_version = '26.0.1383.0'
