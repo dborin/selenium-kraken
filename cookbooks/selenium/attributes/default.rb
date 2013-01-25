@@ -1,7 +1,7 @@
 default.selenium.user = 'seleniumuser'
 default.selenium.home = '/home/seleniumuser/'
 
-default.selenium.bindings = { 'python' => '2.24.0', 'ruby' => '2.27.2'}
+default.selenium.bindings = { 'python' => '2.29.0', 'ruby' => '2.29.0'}
 
 #hub config
 default.selenium.server.version = '2.29.0'
