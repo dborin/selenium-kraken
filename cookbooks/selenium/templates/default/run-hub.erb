@@ -5,11 +5,13 @@ CONFIGPATH=<%= File.join(node['selenium']['server']['installpath'], 'hubConfig.j
 HUBJAVA=/usr/bin/java
 HUBARGS="-jar $SELPATH -role hub -hubConfig $CONFIGPATH "
 PIDFILE=/var/run/selenium/hub.pid
+USER=root
+
 case "$1" in
   start)
     mkdir -p /var/run/selenium
     echo -n "Starting grid hub"
-    /sbin/start-stop-daemon --start --pidfile $PIDFILE --make-pidfile --background --exec $HUBJAVA -- $HUBARGS
+    /sbin/start-stop-daemon --start --chuid $USER --pidfile $PIDFILE --make-pidfile --background --exec /bin/bash -- -c "$HUBJAVA $HUBARGS > /var/log/selenium.log 2>&1"
     echo "."
     ;;
   stop)
