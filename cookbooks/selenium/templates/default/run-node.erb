@@ -15,7 +15,7 @@ case "$1" in
   start)
     mkdir -p /var/run/selenium
     echo -n "Starting grid node"
-    /sbin/start-stop-daemon --start --chuid $USER --quiet --pidfile $PIDFILE --make-pidfile --background --exec /bin/bash -c "$NODEJAVA $NODEARGS > /var/log/selenium.log 2>&1"
+    /sbin/start-stop-daemon --start --chuid $USER --quiet --pidfile $PIDFILE --make-pidfile --background --exec /bin/bash -- -c "$NODEJAVA $NODEARGS > /var/log/selenium.log 2>&1"
     echo "."
     ;;
   stop)
