@@ -1,0 +1,8 @@
+#!/bin/bash
+DISPLAY=<%= node['selenium']['xvfb']['display'] %>
+FBSIZE=<%= node['selenium']['xvfb']['fbsize'] %>
+
+export DISPLAY=$DISPLAY
+
+exec 2>&1
+exec /usr/bin/Xvfb $DISPLAY -ac -screen 0 $FBSIZE

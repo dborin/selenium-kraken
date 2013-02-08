@@ -1,5 +1,0 @@
-{
-    "ipaddress": "10.14.209.34",
-    "run_list": ["role[se-node]"],
-    "name": "sfo-selenium-node7"
-}

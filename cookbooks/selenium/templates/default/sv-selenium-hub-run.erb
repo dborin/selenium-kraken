@@ -1,0 +1,7 @@
+#!/bin/bash
+
+SELPATH=<%= File.join(node['selenium']['server']['installpath'], 'selenium-server-standalone.jar') %>
+CONFIGPATH=<%= File.join(node['selenium']['server']['installpath'], 'hubConfig.json') %>
+
+exec 2>&1
+exec /usr/bin/java -jar $SELPATH -role hub -hubConfig $CONFIGPATH

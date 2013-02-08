@@ -1,0 +1,4 @@
+{
+    "ipaddress": "10.14.209.77",
+    "run_list": ["role[se-node]"]
+}

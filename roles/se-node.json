@@ -11,11 +11,8 @@
     "chef_type": "role",
     "default_attributes": {
         "selenium": {
-            "server": {
-                "hubaddress": "10.14.209.29"
-            },
             "node": {
-                "hubhost": "10.14.209.29"
+                "hubhost": "10.14.209.83"
             }
         }
     },

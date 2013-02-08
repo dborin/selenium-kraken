@@ -1,5 +1,0 @@
-{
-    "ipaddress": "10.14.208.149",
-    "name": "sfo-selenium-hub0",
-    "run_list": ["role[se-hub]"]
-}
