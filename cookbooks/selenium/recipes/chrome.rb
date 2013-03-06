@@ -1,5 +1,5 @@
 include_recipe 'selenium::default'
-	
+
 case node['kernel']['machine']
 when 'i686'
   arch = 'linux32'
