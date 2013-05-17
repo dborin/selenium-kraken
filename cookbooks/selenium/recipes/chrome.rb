@@ -12,15 +12,15 @@ package 'unzip'
 
 ARCHIVE="chromedriver_#{arch}_#{node['selenium']['chromedriver_version']}.zip"
 
+execute "unpack_chromedriver" do
+  command "unzip -o /usr/src/#{ARCHIVE} -d /usr/local/bin"
+  action :nothing
+end
+
 remote_file "/usr/src/#{ARCHIVE}" do
   source "http://chromedriver.googlecode.com/files/#{ARCHIVE}"
   action :create_if_missing
-  #notifies :run, resources(:execute => "unpack_chromedriver"), :immediately
-end
-
-execute "unpack_chromedriver" do
-  command "unzip -o /usr/src/#{ARCHIVE} -d /usr/local/bin"
-  action :run
+  notifies :run, resources(:execute => "unpack_chromedriver"), :immediately
 end
 
 file '/usr/local/bin/chromedriver' do
