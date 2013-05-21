@@ -7,7 +7,7 @@ when 'x86_64'
   arch = 'linux64'
 end
 
-package 'chromium-browser'
+package 'google-chrome'
 package 'unzip'
 
 ARCHIVE="chromedriver_#{arch}_#{node['selenium']['chromedriver_version']}.zip"
