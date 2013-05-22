@@ -19,8 +19,15 @@ The following must be configured prior to installation
 				user root
 				IdentityFile /Users/ltorvalds/.ssh/secretkey_rsa
 				
-3. Modify the `/nodes/*.json` files accordingly to match the names and IPs of **YOUR** iNova machines.
-4. An iNova server (Ubuntu 12.04) for a hub and at least one for a node (multiple nodes can be created)
+3. Create a `/nodes/*.json` with the following for your hub (and nodes)<br><br>
+
+			{
+    			"ipaddress": "10.14.210.137",
+    			"name": "10.14.210.137",
+    			"run_list": ["role[se-hub]"]
+			}
+   You will need to change the role in the `run_list` entry from "se-hub" to "se-node" when creating the JSON file for a node.		
+4. Create a server (Ubuntu 12.04) for a hub and at least one for a node (multiple nodes can be created), most likely in iNova
 5. Append the `secretkey_rsa.pub` to the `/root/.ssh/authorized_keys2` file on all hub and node servers<br><br>
 
 		cat ~/.ssh/secretkey_rsa.pub | { read x; ssh root@my-hub0 "echo $x >> .ssh/authorized_keys2"; }
