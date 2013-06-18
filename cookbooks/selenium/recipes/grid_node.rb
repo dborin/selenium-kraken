@@ -27,5 +27,6 @@ template File.join(node['selenium']['server']['installpath'], 'nodeConfig.json')
   mode 0644
   owner node['selenium']['user']
   group node['selenium']['user']
+  notifies :restart, resources(:runit_service => ["selenium-node"])
 end
 
