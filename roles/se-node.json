@@ -10,11 +10,6 @@
     "description": "Installs required recipes for a Selenium Server node",
     "chef_type": "role",
     "default_attributes": {
-        "selenium": {
-            "node": {
-                "hubhost": "10.14.209.83"
-            }
-        }
     },
     "override_attributes": {
     }

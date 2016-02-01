@@ -21,6 +21,7 @@
     "hostname": "<%= node['name'] %>",
     "register": true,
     "registerCycle": 5000,
-    "hubPort": <%= node['selenium']['server']['hubport'] %>
+    "hubPort": <%= node['selenium']['server']['hubport'] %>,
+    "hubHost": <%= node['selenium']['node']['hubhost'] %>
   }
 }

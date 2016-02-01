@@ -14,7 +14,7 @@ runit_service "selenium-hub" do
 end
 
 remote_file File.join(node['selenium']['server']['installpath'], "selenium-server-standalone-#{node['selenium']['server']['version']}.jar") do
-  source "http://selenium.googlecode.com/files/selenium-server-standalone-#{node['selenium']['server']['version']}.jar"
+  source "http://selenium-release.storage.googleapis.com/#{node['selenium']['server']['majmin']}/selenium-server-standalone-#{node['selenium']['server']['version']}.jar"
   action :create_if_missing
   mode 0644
   owner USER

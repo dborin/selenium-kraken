@@ -42,10 +42,11 @@ end
 package 'unzip'
 
 ARCHIVE="chromedriver_#{arch}_#{node['selenium']['chromedriver_version']}.zip"
+ZIPFILE="chromedriver_#{arch}.zip"
 SELUSER="#{node['selenium']['user']}"
 
 remote_file "/usr/src/#{ARCHIVE}" do
-  source "http://chromedriver.googlecode.com/files/#{ARCHIVE}"
+  source "http://chromedriver.storage.googleapis.com/#{node['selenium']['chromedriver_version']}/#{ZIPFILE}"
   action :create_if_missing
   notifies :run, "bash[unpack_chromedriver]", :immediately
 end
