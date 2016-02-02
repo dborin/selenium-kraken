@@ -1,11 +1,11 @@
 default.selenium.user = 'seleniumuser'
 default.selenium.home = '/home/seleniumuser/'
 
-default.selenium.bindings = { 'python' => '2.45.0', 'ruby' => '2.45.0'}
+default.selenium.bindings = { 'python' => '2.50.0', 'ruby' => '2.50.0'}
 
 #hub config
-default.selenium.server.version = '2.45.0'
-default.selenium.server.majmin = '2.45'
+default.selenium.server.version = '2.50.0'
+default.selenium.server.majmin = '2.50'
 default.selenium.server.installpath = default['selenium']['home']+'selenium'
 default.selenium.server.standalonefile = default['selenium']['home']+'selenium'
 
