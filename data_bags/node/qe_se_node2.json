@@ -1,0 +1,1 @@
+{"domain": "", "name": "qe_se_node2", "roles": ["se-node"], "recipes": ["selenium::firefox", "selenium::grid_node", "selenium::chrome", "selenium::local"], "chef_environment": "_default", "hostname": "qe_se_node2", "fqdn": "qe_se_node2", "role": ["se-node"], "run_list": ["role[se-node]"], "ipaddress": "172.17.29.12", "id": "qe_se_node2"}
