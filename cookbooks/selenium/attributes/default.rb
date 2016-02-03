@@ -1,10 +1,10 @@
 default.selenium.user = 'seleniumuser'
 default.selenium.home = '/home/seleniumuser/'
 
-default.selenium.bindings = { 'python' => '2.50.0', 'ruby' => '2.50.0'}
+default.selenium.bindings = { 'python' => '2.50.1', 'ruby' => '2.50.1'}
 
 #hub config
-default.selenium.server.version = '2.50.0'
+default.selenium.server.version = '2.50.1'
 default.selenium.server.majmin = '2.50'
 default.selenium.server.installpath = default['selenium']['home']+'selenium'
 default.selenium.server.standalonefile = default['selenium']['home']+'selenium'
@@ -17,7 +17,7 @@ default.selenium.server.maxSession = '15'
 
 #nodes config
 default.selenium.server.hubport = '4444'
-default.selenium.node.hubhost = '172.17.29.8'
+default.selenium.node.hubhost = 'qa-se-grid.iad.livingsocial.net'
 default.selenium.node.port = '5555'
 default.selenium.node.maxSession = '15'
 

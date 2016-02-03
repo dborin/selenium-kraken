@@ -1,0 +1,1 @@
+{"domain": "", "name": "qe_se_hub", "roles": ["se-hub"], "recipes": ["selenium::grid_hub", "selenium::local"], "chef_environment": "_default", "hostname": "qe_se_hub", "fqdn": "qe_se_hub", "role": ["se-hub"], "run_list": ["role[se-hub]"], "ipaddress": "172.17.29.8", "id": "qe_se_hub"}
