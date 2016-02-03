@@ -2,7 +2,7 @@
 
 This repo contains cookbooks for installing a Selenium Server hub or node.  It also requires Java, Ruby and Python be installed, so those are included.  In light of issues with Oracle SDK, OpenSDK 7 is utilized (by default).
 
-**PLEASE NOTE:** This assumes that you are already familiar with `littlechef`, `knife`, and basic Linux sysadmin and package management.  **USE AT YOUR OWN RISK!**
+**PLEASE NOTE:** This assumes that you are already familiar with Opscode Chef, `littlechef`, `knife`, and basic Linux sysadmin and package management.  **USE AT YOUR OWN RISK!**
 
 ## Notes
 
@@ -25,7 +25,9 @@ The following must be configured prior to installation
 			{
     			"ipaddress": "10.14.210.137",
     			"name": "10.14.210.137",
-    			"run_list": ["role[se-hub]"]
+    			"run_list": [
+    				"role[se-hub]"
+    			]
 			}
    You will need to change the role in the `run_list` entry from "se-hub" to "se-node" when creating the JSON file for a node.		
 4. Create a server (Ubuntu 14.04) for a hub and at least one for a node (multiple nodes can be created)
